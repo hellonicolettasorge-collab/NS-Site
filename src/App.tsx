@@ -103,7 +103,7 @@ export default function App() {
           {/* Hero Image (Right side) */}
           <div className="absolute inset-0 md:left-1/3 lg:left-[40%] flex items-center justify-center z-0">
             <img 
-              src="/pic_hero.jpeg" 
+              src="src/pic_hero.jpeg" 
               alt="Nicoletta Sorge" 
               className="absolute inset-0 w-full h-full object-cover object-center md:object-left z-0"
             />
@@ -195,7 +195,7 @@ export default function App() {
               {/* Portrait Image */}
               <FadeUp delay={0.2} className="order-1 md:order-2 relative h-[60vh] md:h-[80vh] w-full md:w-[120%]">
                 <img 
-                  src="/pic_profile.jpeg" 
+                  src="src/pic_profile.jpeg" 
                   alt="Ritratto Nicoletta Sorge" 
                   className="absolute inset-0 w-full h-full object-cover"
                   referrerPolicy="no-referrer"
