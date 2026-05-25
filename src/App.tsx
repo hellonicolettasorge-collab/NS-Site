@@ -103,7 +103,7 @@ export default function App() {
           {/* Hero Image (Right side) */}
           <div className="absolute inset-0 md:left-1/3 lg:left-[40%] flex items-center justify-center z-0">
             <img 
-              src="/hero-image.jpg" 
+              src="/pic_hero.jpeg" 
               alt="Nicoletta Sorge" 
               className="absolute inset-0 w-full h-full object-cover object-center md:object-left z-0"
             />
@@ -146,7 +146,7 @@ export default function App() {
                     Parliamoci
                   </a>
                   <a
-                    href="#portfolio"
+                    href="https://drive.google.com/file/d/1-4wHjOJ_pnSzG-0_1QwtN-AqqIZtJnmU/view?usp=sharing"
                     className="inline-block text-[11px] uppercase tracking-[0.15em] border-b border-cream/30 hover:border-yellow hover:text-yellow pb-1 transition-colors"
                   >
                     Guarda il portfolio →
@@ -195,7 +195,7 @@ export default function App() {
               {/* Portrait Image */}
               <FadeUp delay={0.2} className="order-1 md:order-2 relative h-[60vh] md:h-[80vh] w-full md:w-[120%]">
                 <img 
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" 
+                  src="/pic_profile.jpeg" 
                   alt="Ritratto Nicoletta Sorge" 
                   className="absolute inset-0 w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -218,7 +218,7 @@ export default function App() {
                   Campagne, social, naming, stand, script. Cose che hanno funzionato.<br />Alcune meglio del previsto, nessuna peggio.
                 </p>
                 <a
-                  href="#portfolio"
+                  href="https://drive.google.com/file/d/1-4wHjOJ_pnSzG-0_1QwtN-AqqIZtJnmU/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block border border-brown text-brown px-8 py-4 text-[11px] uppercase tracking-[0.15em] hover:bg-brown hover:text-cream transition-colors whitespace-nowrap"
@@ -251,13 +251,8 @@ export default function App() {
 
         {/* Project Teaser Section */}
         <section className="py-40 bg-dark-olive text-cream relative overflow-hidden">
-          {/* Background Image */}
-          <img 
-            src="https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=2000&auto=format&fit=crop" 
-            alt="Scrittura e consapevolezza" 
-            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
-            referrerPolicy="no-referrer"
-          />
+        
+  
           {/* Noise overlay for dark section */}
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
           
@@ -311,19 +306,19 @@ export default function App() {
 
               <div className="flex flex-col justify-center">
                 <FadeUp delay={0.2} className="border-b border-brown/10">
-                  <a href="mailto:hello@nicolettasorge.com" className="group flex justify-between items-center py-6 hover:pl-4 transition-all duration-300">
+                  <a href="mailto:hello.nicolettasorge@gmail.com" className="group flex justify-between items-center py-6 hover:pl-4 transition-all duration-300">
                     <span className="font-serif text-2xl group-hover:text-coral transition-colors">Mail</span>
-                    <span className="font-sans font-light text-sm">hello@nicolettasorge.com</span>
+                    <span className="font-sans font-light text-sm">hello.nicolettasorge@gmail.com</span>
                   </a>
                 </FadeUp>
                 <FadeUp delay={0.3} className="border-b border-brown/10">
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center py-6 hover:pl-4 transition-all duration-300">
+                  <a href="https://www.instagram.com/nicoletta_sorge/" target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center py-6 hover:pl-4 transition-all duration-300">
                     <span className="font-serif text-2xl group-hover:text-coral transition-colors">Instagram</span>
                     <span className="font-sans font-light text-sm">→ @nicoletta_sorge</span>
                   </a>
                 </FadeUp>
                 <FadeUp delay={0.4} className="border-b border-brown/10">
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center py-6 hover:pl-4 transition-all duration-300">
+                  <a href="https://www.behance.net/nicolettas589f" target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center py-6 hover:pl-4 transition-all duration-300">
                     <span className="font-serif text-2xl group-hover:text-coral transition-colors">Behance</span>
                     <span className="font-sans font-light text-sm">→ link</span>
                   </a>
