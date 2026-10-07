@@ -38,6 +38,7 @@ export default function App() {
   const navLinks = [
     { name: 'Chi sono', href: '#about' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Extra', href: '#new-make' },
     { name: 'Contatti', href: '#contact' },
   ];
 
