@@ -286,7 +286,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-center">
               {/* Photo on the Left */}
-              <div className="md:col-span-5 lg:col-span-5 order-2 md:order-1">
+              <div className="md:col-span-5 lg:col-span-5 order-1 md:order-1">
                 <FadeUp delay={0.1} className="relative h-[50vh] md:h-[65vh] w-full overflow-hidden rounded-sm ring-1 ring-inset ring-[#FAF6ED]/10">
                   <img 
                     src="/newmake-image.jpg"
@@ -299,7 +299,7 @@ export default function App() {
               </div>
 
               {/* Text on the Right */}
-              <div className="md:col-span-7 lg:col-span-7 order-1 md:order-2">
+              <div className="md:col-span-7 lg:col-span-7 order-2 md:order-2">
                 <FadeUp>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#e3b0ff] font-medium block mb-4">
                     Studio Creativo
