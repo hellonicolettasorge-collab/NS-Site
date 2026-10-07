@@ -28,6 +28,13 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Chi sono', href: '#about' },
     { name: 'Portfolio', href: '#portfolio' },
@@ -74,30 +81,30 @@ export default function App() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 bg-[#0C241A] text-[#FAF6ED] z-40 flex flex-col items-center justify-center gap-8"
-            >
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-base uppercase tracking-[0.15em] text-[#FAF6ED] hover:text-[#e3b0ff] transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
+
+      {/* Mobile Menu: fuori dall'header, perché backdrop-blur creerebbe un containing block per gli elementi fixed */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 bg-[#0C241A] text-[#FAF6ED] z-40 flex flex-col items-center justify-center gap-8"
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-base uppercase tracking-[0.15em] text-[#FAF6ED] hover:text-[#e3b0ff] transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main>
         {/* Hero Section */}
@@ -196,7 +203,7 @@ export default function App() {
                   </FadeUp>
                   <FadeUp delay={0.2}>
                     <p>
-                      Faccio copywriting, content strategy, script, piani editoriali. Ma la parte che preferisco è quella in cui qualcuno dice "non si può fare”, perché di solito si può, basta trovare la strada giusta.
+                      Faccio copywriting, content strategy, script, piani editoriali. Ma la parte che preferisco è quella in cui qualcuno dice “non si può fare”, perché di solito si può, basta trovare la strada giusta.
                     </p>
                   </FadeUp>
                   <FadeUp delay={0.3}>
@@ -210,11 +217,7 @@ export default function App() {
               {/* Portrait Image */}
               <FadeUp delay={0.2} className="order-1 md:order-2 relative h-[60vh] md:h-[80vh] w-full md:w-[120%] overflow-hidden rounded-sm">
                 <img 
-                  src="/about-image.jpg" 
-                  onError={(e) => {
-                    // Fallback visivo se non ancora caricata
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop";
-                  }}
+                  src="/about-image.jpg"
                   alt="Ritratto Nicoletta Sorge" 
                   className="absolute inset-0 w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -285,16 +288,7 @@ export default function App() {
               <div className="md:col-span-5 lg:col-span-5 order-2 md:order-1">
                 <FadeUp delay={0.1} className="relative h-[50vh] md:h-[65vh] w-full overflow-hidden rounded-sm ring-1 ring-inset ring-[#FAF6ED]/10">
                   <img 
-                    src="/newmake-image.jpg" 
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (!target.dataset.triedPng) {
-                        target.dataset.triedPng = "true";
-                        target.src = "/newmake-image.png";
-                      } else {
-                        target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop";
-                      }
-                    }}
+                    src="/newmake-image.jpg"
                     alt="New Make Studio" 
                     className="absolute inset-0 w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -433,7 +427,7 @@ export default function App() {
       <footer className="border-t border-[#FAF6ED]/10 py-8 bg-[#0C241A]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-[10px] uppercase tracking-[0.15em] text-[#FAF6ED]/60">
-            Nicoletta Sorge — Milano, 2025
+            Nicoletta Sorge — Milano, {new Date().getFullYear()}
           </div>
           <div className="flex gap-6 text-[10px] uppercase tracking-[0.15em] text-[#FAF6ED]/60">
             <a href="https://www.linkedin.com/in/nicoletta-sorge" target="_blank" rel="noopener noreferrer" className="hover:text-[#e3b0ff] transition-colors">LinkedIn</a>
