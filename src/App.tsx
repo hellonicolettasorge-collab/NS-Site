@@ -239,23 +239,6 @@ export default function App() {
               </h2>
             </FadeUp>
 
-            <FadeUp delay={0.1}>
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-24">
-                {/* Titolo in #ffbe10 */}
-                <p className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight max-w-[20ch] text-[#ffbe10]">
-                  Campagne, social, naming, stand, script. Cose che hanno funzionato.<br />Alcune meglio del previsto, nessuna peggio.
-                </p>
-                <a
-                  href={PORTFOLIO_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block border border-[#ffbe10] text-[#ffbe10] px-8 py-4 text-[11px] uppercase tracking-[0.15em] font-medium hover:bg-[#ffbe10] hover:text-[#0C241A] transition-colors whitespace-nowrap"
-                >
-                  Vedi il portfolio completo →
-                </a>
-              </div>
-            </FadeUp>
-
             {/* Brand Cloud */}
             <div className="relative min-h-[40vh] mb-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-20 md:gap-y-12">
               <FadeUp delay={0.2}><span className="font-serif text-4xl md:text-6xl text-[#FAF6ED]/90 hover:text-[#ffbe10] transition-colors cursor-default">Amazon</span></FadeUp>
@@ -272,11 +255,28 @@ export default function App() {
               <FadeUp delay={0.75}><span className="font-serif text-3xl md:text-5xl text-[#e3b0ff] hover:text-[#ffbe10] transition-colors cursor-default">Dispensa Emilia</span></FadeUp>
             </div>
 
-            <FadeUp delay={1.2} className="text-center">
+            <FadeUp delay={0.8} className="text-center mb-24">
               {/* Sottotitolo categorie in #e3b0ff */}
               <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-[#e3b0ff]/80 leading-relaxed max-w-4xl mx-auto font-light">
                 TECH & CONSUMER ELECTRONICS · FOOD & BEVERAGE · BEAUTY & PERSONAL CARE · FASHION & LIFESTYLE · HOME & LIVING · AUDIO & ENTERTAINMENT
               </p>
+            </FadeUp>
+
+            <FadeUp delay={0.1}>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                {/* Titolo in #ffbe10 */}
+                <p className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight max-w-[20ch] text-[#ffbe10]">
+                  Campagne, social, naming, stand, script. Cose che hanno funzionato.<br />Alcune meglio del previsto, nessuna peggio.
+                </p>
+                <a
+                  href={PORTFOLIO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border border-[#ffbe10] text-[#ffbe10] px-8 py-4 text-[11px] uppercase tracking-[0.15em] font-medium hover:bg-[#ffbe10] hover:text-[#0C241A] transition-colors whitespace-nowrap"
+                >
+                  Vedi il portfolio completo →
+                </a>
+              </div>
             </FadeUp>
           </div>
         </section>
